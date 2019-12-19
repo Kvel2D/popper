@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project>
+  <set name="windowwidth" value="800" />
+  <set name="windowheight" value="800" />
+  
+	<meta 
+    title="popper" 
+    package="com.kvel2d.game" 
+    version="1.0.0" 
+    company="Dmitry Degtyarev" 
+  />
+  
+  <app swf-version="17.0" if="flash"/>
+	<app 
+      main="haxegon.Load"
+      path="bin" 
+      file="newproject" 
+  />
+
+  <window width="${windowwidth}" height="${windowheight}" if="flash || cpp || neko"></window>
+  <window width="0" height="0" if="html5 || mobile"></window>
+	 
+	<window
+      fps="60"
+      background="0x000000"
+      orientation="landscape"
+      hardware="true"
+      vsync="true"
+      allow-high-dpi="true"
+  ></window>
+   
+	<source path="src" />
+  <haxelib name="lime" version="7.2.1" />
+  <haxelib name="openfl" version="8.8.0" />
+	<haxedef name="windowwidth" value="${windowwidth}" />
+  <haxedef name="windowheight" value="${windowheight}" />
+  
+	<assets path="data" exclude="*.mp3" if="cpp || neko"/>
+	<assets path="data" exclude="*.ogg" if="flash"/>
+	<assets path="data" if="html5"/>
+	
+	<icon path="data/icon.png"/>
+</project>
